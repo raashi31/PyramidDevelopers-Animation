@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import SearchIcon from '@material-ui/icons/Search';
+
+const searchStyle = {
+  fontSize : '30px',
+  marginTop : '16px'
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="circle-with-search">
+        <SearchIcon style = {searchStyle} />
+      </div>
+      <div className="circle-with-border">
+        <div className="border-circle" />
+      </div>
+      <div className="input-box">
+        <div className="text-container">
+          <h1>Pyramid Developers</h1>
+          <div className="arrow-container">
+            <ArrowForwardIcon style = {{fontSize : 20}}/>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

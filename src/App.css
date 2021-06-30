@@ -1,38 +1,160 @@
+@font-face {
+  font-family: ISOCPEUR;
+  src: url('./font/isocpeur.ttf');
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.circle-with-search {
+  margin-top: 300px;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  opacity: 1;
+  background-color: orange;
+  border-radius: 50px;
+  animation: fadeOut 50ms ease 1s forwards;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.circle-with-border {
+  margin-top: 300px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  background-color: orange;
+  border-radius: 50px;
+  position: absolute;
+  opacity: 0;
+  animation: fadeIn 50ms ease 1s forwards;
+}
+
+.border-circle {
+  margin-top: 300px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50px;
+  margin: auto;
+  border: solid black 2px;
+  animation: zoomIn 500ms ease 1050ms forwards,
+  fadeOut 50ms ease 1550ms forwards;
+}
+
+.input-box {
+  margin-top: 300px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 300px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: orange;
+  position: absolute;
+  opacity: 0;
+  transform: scaleX(0);
+  animation: fadeIn 50ms ease 1600ms forwards,
+  expand 500ms ease 1650ms forwards;
+}
+
+.text-container {
+  display: flex;
+  flex-flow: row;
+  width: 280px;
+  height: 40px;
+  margin: auto;
+  border-radius: 25px;
+  border: solid black 2px;
+}
+
+h1 {
+  font-family: ISOCPEUR;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: auto;
+  margin-left: 10px;
+  text-align: left;
+  color: black;
+  position: relative;
+  width: max-content;
+}
+
+.arrow-container {
+  margin-left: 30px;
+  margin-top: 10px;
+  height: max-content;
+  opacity: 0;
+  transform: translateX(500);
+  animation: fadeInRight 100ms ease 2200ms forwards;
+}
+
+h1::before,
+h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+h1::before {
+  background: orange;
+  animation: typewriter 1s ease 2150ms forwards;
+}
+
+h1::after {
+  width: 2px;
+  background: black;
+  animation: 
+  typewriter 1s ease 2150ms forwards,
+  fadeOut 400ms ease 3500ms forwards;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes expand{
+  to {
+    -webkit-transform: scaleX(1);
+  }
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
-@keyframes App-logo-spin {
+@keyframes fadeOut {
   from {
-    transform: rotate(0deg);
+    opacity: 1;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes zoomIn {
+  to {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
