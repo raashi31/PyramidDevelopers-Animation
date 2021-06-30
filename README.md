@@ -1,1 +1,1 @@
-This project is a small and quick animation done using React Js.
+This repository is my code submission for a fun coding challenge held at Pyramid Developers.
